@@ -5,9 +5,9 @@
       <img src="./assets/text chính-01.png" alt="">
       <img src="./assets/minh hoạ-01.png" alt="">
       <div class="noidung" @submit="onSubmit"  @reset="onReset" >
-        <input class="inp" v-model="form.name" type="" placeholder="Tên của bạn" required>
-        <input class="inp" v-model="form.email" type="email" placeholder="Email của bạn" required>
-        <input class="inp" v-model="form.phone" type="" placeholder="Số điện thoại" required>
+        <input class="inp" v-model="form.name" type="" name="name" placeholder="Tên của bạn" required>
+        <input class="inp" v-model="form.email" type="email" name="email" placeholder="Email của bạn" required>
+        <input class="inp" v-model="form.tel" type="tel" name="email" placeholder="Số điện thoại" required>
         <button class="xn" type="submit" @click="onSubmit">Xác nhận</button>
       </div>
      </div>
@@ -22,7 +22,7 @@ export default {
       form:{
          name: '',
          email: '',
-         phone: ''
+         tel: ''
       },
        show: true
     }
@@ -33,14 +33,14 @@ export default {
         alert("Cảm ơn bạn đã để lại thông tin \n"+JSON.stringify(this.form))
          this.form.email = ''
         this.form.name = ''
-        this.form.phone = ''
+        this.form.tel = ''
       },
        onReset(event) {
         event.preventDefault()
         // Reset our form values
         this.form.email = ''
         this.form.name = ''
-        this.form.phone = ''
+        this.form.tel = ''
         this.show = false
         this.$nextTick(() => {
           this.show = true
@@ -79,10 +79,10 @@ html, body{
 }
 .noidung{
   position: absolute;
-  top: 40%;
-  left: 6%;
-  width: 48%;
-  height: 40%;
+  top: 45%;
+  left: 14%;
+  width: 30%;
+  height: 35%;
 }
 .inp{
   border-radius: 20px;
@@ -100,7 +100,7 @@ html, body{
   width: 32%;
   height: 16%;
   color:#62DEC6;
-  transform: translateY(10px);
+  transform: translateY(15px);
   background-color: whitesmoke;
   border-radius: 20px;
   font-size: 20px;
